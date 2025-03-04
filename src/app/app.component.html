@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Bienvenido a la plataforma de tickets</mat-card-title>
+  <mat-card-content>
+    <button mat-raised-button color="primary" [routerLink]="['/login']">
+      Iniciar Sesión
+    </button>
+    <button mat-raised-button color="accent" [routerLink]="['/register']">
+      Registrarse
+    </button>
+    <button mat-raised-button color="warn" [routerLink]="['/tickets']">
+      Ver Tickets
+    </button>
+  </mat-card-content>
+</mat-card>
+<router-outlet></router-outlet>
