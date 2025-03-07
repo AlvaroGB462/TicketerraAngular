@@ -1,0 +1,67 @@
+/* Contenedor para el mat-card */
+mat-card {
+    display: flex;
+    justify-content: space-between;  /* Espacio entre el título y los botones */
+    align-items: center;  /* Alinea verticalmente los elementos */
+    padding: 10px 20px;
+    margin: 0; /* Elimina márgenes por defecto */
+    box-shadow: none; /* No queremos sombra para una barra limpia */
+    border-radius: 0; /* Sin bordes redondeados */
+    background-color: #3f51b5; /* Color de fondo de la cabecera */
+    color: white; /* Color del texto */
+  }
+  
+  /* Estilo para el título dentro del mat-card (a la izquierda) */
+  mat-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0; /* Elimina márgenes del título */
+    text-align: left;  /* Alinea el texto a la izquierda */
+  }
+  
+  /* Estilo para el contenedor de los botones (a la derecha) */
+  mat-card-content {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 10px;  /* Espacio entre los botones */
+  }
+  
+  /* Estilo para los botones */
+  mat-card-content button {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Colores de los botones */
+  button.mat-raised-button {
+    font-weight: bold;
+  }
+  
+  button.mat-raised-button[color='primary'] {
+    background-color: #ffffff;
+    color: #3f51b5;
+    border: 1px solid #ffffff;
+  }
+  
+  button.mat-raised-button[color='primary']:hover {
+    background-color: #f5f5f5;
+  }
+  
+  button.mat-raised-button[color='accent'] {
+    background-color: #ff4081;
+    color: white;
+    border: 1px solid #ff4081;
+  }
+  
+  button.mat-raised-button[color='accent']:hover {
+    background-color: #f50057;
+  }
+  
+  /* Estilo para el router-outlet (si es necesario) */
+  router-outlet {
+    display: block;
+    margin-top: 20px;
+  }
+  

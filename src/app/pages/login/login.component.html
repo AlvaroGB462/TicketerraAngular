@@ -1,39 +1,21 @@
-<mat-card>
-  <mat-card-title>Iniciar Sesión</mat-card-title>
-  <mat-card-content>
-    <mat-form-field appearance="outline">
-      <mat-label>Correo Electrónico</mat-label>
-      <input matInput [(ngModel)]="email" type="email">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Contraseña</mat-label>
-      <input matInput [(ngModel)]="password" type="password">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
-    <button mat-button (click)="showForgotPassword = !showForgotPassword" *ngIf="!showForgotPassword">
-      ¿Has olvidado tu contraseña?
-    </button>
-
-    <!-- Formulario para recuperar la contraseña -->
-    <div *ngIf="showForgotPassword">
-      <mat-form-field appearance="outline">
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title>Iniciar Sesión</mat-card-title>
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width">
         <mat-label>Correo Electrónico</mat-label>
-        <input matInput [(ngModel)]="emailForRecovery" type="email">
+        <input matInput [(ngModel)]="email" type="email" required>
       </mat-form-field>
-      <button mat-raised-button color="accent" (click)="recoverPassword()">Recuperar Contraseña</button>
-    </div>
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput [(ngModel)]="password" type="password" required>
+      </mat-form-field>
 
-    <!-- Formulario para cambiar la contraseña -->
-    <div *ngIf="showChangePassword">
-      <mat-form-field appearance="outline">
-        <mat-label>Token de Recuperación</mat-label>
-        <input matInput [(ngModel)]="recoveryToken" type="text">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Nueva Contraseña</mat-label>
-        <input matInput [(ngModel)]="newPassword" type="password">
-      </mat-form-field>
-      <button mat-raised-button color="warn" (click)="changePassword()">Cambiar Contraseña</button>
-    </div>
-  </mat-card-content>
-</mat-card>
+      <!-- Mensaje de error -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <button mat-raised-button color="primary" class="login-button" (click)="login()">Ingresar</button>
+    </mat-card-content>
+  </mat-card>
+</div>
